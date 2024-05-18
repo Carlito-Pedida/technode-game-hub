@@ -11,7 +11,7 @@ import {
   FaLinux
 } from "react-icons/fa";
 import { IconType } from "react-icons";
-import { Platform } from "../hooks/usePlatform";
+import { Platform } from "../hooks/usePlatforms";
 
 interface Props {
   platforms: Platform[];
