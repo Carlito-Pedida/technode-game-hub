@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import useGameDetail from "../hooks/useGameDetail";
-import { Heading, Image, Spinner, Text } from "@chakra-ui/react";
+import { Heading, Image, Spinner } from "@chakra-ui/react";
+import ExpandableText from "../components/ExpandableText";
 
 const GameDetail = () => {
   const { slug } = useParams();
@@ -19,7 +20,7 @@ const GameDetail = () => {
         objectFit="cover"
         src={game.background_image}
       />
-      <Text>{game.description_raw}</Text>
+      <ExpandableText>{game.description_raw}</ExpandableText>
     </>
   );
 };
