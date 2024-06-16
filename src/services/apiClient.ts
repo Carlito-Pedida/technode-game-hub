@@ -13,7 +13,7 @@ const axiosInstance = axios.create({
   }
 });
 
-class apiClient<T> {
+class APIClient<T> {
   endpoint: string;
 
   constructor(endpoint: string) {
@@ -25,6 +25,12 @@ class apiClient<T> {
       .get<FetchResponse<T>>(this.endpoint, config)
       .then((res) => res.data);
   };
+
+  getGameDetail = (id: number | string) => {
+    return axiosInstance
+      .get<T>(this.endpoint + "/" + id)
+      .then((res) => res.data);
+  };
 }
 
-export default apiClient;
+export default APIClient;
